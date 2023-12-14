@@ -47,7 +47,12 @@ char **strtow(char *str, char *d)
 	s[h] = NULL;
 	return (s);
 }
-
+/**
+ * **strtow2 - splits a string into different words
+ * @str: the inputed string
+ * @d: the delimeter
+ * Return: a pointer to an array of strings, or NULL on failure
+ */
 char **strtow2(char *str, char d)
 {
 	int r, h, k, m, numwords = 0;

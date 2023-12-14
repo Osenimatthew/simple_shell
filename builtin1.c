@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * Myhistory - Displays the history list with line numbers.
+ * _myhistory - Displays the history list with line numbers.
  * @info: Structure containing potential arguments. Maintains
  *	a consistent function prototype.
  *
@@ -13,6 +13,13 @@ int _myhistory(info_t *info)
 	return (0);
 }
 
+/**
+ * unset_alias - sets alias to string
+ * @info: parameter struct
+ * @str: the string alias
+ *
+ * Return: Always 0 on success, 1 on error
+ */
 int unset_alias(info_t *info, char *str)
 {
 	char *p, f;
@@ -29,6 +36,13 @@ int unset_alias(info_t *info, char *str)
 	return (ret);
 }
 
+/**
+ * set_alias - sets alias to string
+ * @info: parameter struct
+ * @str: the string alias
+ *
+ * Return: Always 0 on success, 1 on error
+ */
 int set_alias(info_t *info, char *str)
 {
 	char *p;
@@ -66,6 +80,12 @@ int print_alias(list_t *node)
 	return (1);
 }
 
+/**
+ * _myalias - mimics the alias builtin (man alias)
+ * @info: Structure containing potential arguments. Used to maintain
+ *          constant function prototype.
+ *  Return: Always 0
+ */
 int _myalias(info_t *info)
 {
 	int g = 0;
@@ -86,7 +106,7 @@ int _myalias(info_t *info)
 	{
 		p = _strchr(info->argv[g], '=');
 		if (p)
-			set_alias(info, info->argv[i]);
+			set_alias(info, info->argv[g]);
 		else
 			print_alias(node_starts_with(info->alias, info->argv[g], '='));
 	}

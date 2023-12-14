@@ -175,7 +175,7 @@ int _myalias(info_t *);
 
 ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
-void sigitHandler(nint);
+void sigitHandler(int);
 
 
 void clear_info(info_t *);
@@ -220,5 +220,7 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
+int bfree(void **ptr);
+void sigitHandler(int sig_num);
 
 #endif
