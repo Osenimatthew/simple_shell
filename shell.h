@@ -221,6 +221,6 @@ int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
 int bfree(void **ptr);
-void sigitHandler(int sig_num);
+void sigintHandler(int sig_num);
 
 #endif
